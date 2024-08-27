@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Showcase</title>
+    <style>
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #007bff;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #6c757d;
+            font-size: 16px;
+        }
+
+        /* Profile section */
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-info img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-right: 20px;
+        }
+
+        .profile-info .details {
+            font-size: 18px;
+        }
+
+        .profile-info .details p {
+            margin: 5px 0;
+        }
+
+        /* Projects section */
+        .projects {
+            margin-top: 20px;
+        }
+
+        .projects h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .project h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .project p {
+            margin: 10px 0 0;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>{{user.username}}</h1>
+            <p>Explore the projects and details of the user.</p>
+        </div>
+
+        <!-- Profile Information -->
+        <div class="profile-info">
+            <img src="data:image/jpeg;base64,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" alt="avatar">
+            <div class="details">
+                <p>{{user.first_name}} {{user.last_name}}</p>
+                <p>{{user.email}}</p>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects">
+            <h3>Projects</h3>
+            <p><a href="add_work">
+                <button type="submit" class="">add project</button></p></a>
+              
+      <div class="project" id="project1"><br></div>
+     
+
+
+            <!-- Project 1 -->
+            {% for i in projects %}
+            <div class="project">
+                <h4>{{i.project_name}}</h4>
+
+                <p>{{i.link}}</p>
+            </div>
+            {% endfor %}
+
+            <!-- Project 2 -->
+            
+        </div>
+    </div>
+</body>
+</html>
